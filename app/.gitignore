@@ -1,13 +1,6 @@
 *.iml
-.gradle
 /local.properties
 .idea
 .DS_Store
 /build
 /captures
-
-/lib-bither-compress/build
-/OpenCVLibrary/build
-/freeline
-freeline.py
-/node_modules/
