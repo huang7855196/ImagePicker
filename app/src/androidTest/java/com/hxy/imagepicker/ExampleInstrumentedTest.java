@@ -1,4 +1,4 @@
-package com.hxy.imagepacker;
+package com.hxy.imagepicker;
 
 import android.content.Context;
 
