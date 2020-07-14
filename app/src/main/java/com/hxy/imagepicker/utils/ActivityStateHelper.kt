@@ -9,8 +9,8 @@ import kotlinx.android.synthetic.main.activity_base_content.*
 
 /**
  * desc:
- * @author tuoxie on 2020/7/14
- * E-Mail Address：tuoxie@gaoding.com
+ * @author hxy on 2020/7/14
+ * E-Mail Address：yang7855196@163.com
  **/
 class ActivityStateHelper constructor(activity: BaseActivity, contentLayoutRes: Int) {
     private var mContentLayoutRes: Int = contentLayoutRes
