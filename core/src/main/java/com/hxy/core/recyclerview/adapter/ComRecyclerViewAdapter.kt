@@ -10,20 +10,20 @@ import com.zhangyue.we.x2c.X2C
  * @author tuoxie on 2020/7/15
  * E-Mail Address：tuoxie@gaoding.com
  **/
-abstract class ComRecyclerViewAdapter<T> constructor(context: Context, datas: ArrayList<T>, layoutId: Int) : RecyclerView.Adapter<RecyclerViewHolder>() {
-    private var mDatas: ArrayList<T>? = null
-    private var mContext: Context? = null
+abstract class ComRecyclerViewAdapter<T> : RecyclerView.Adapter<RecyclerViewHolder> {
+    protected var mDatas: ArrayList<T>? = null
+    protected var mContext: Context
     private var mLayoutId: Int = 0
 
-    init {
+    constructor(context: Context, datas: ArrayList<T>, layoutId: Int) {
         mDatas = datas
         mContext = context
-        mLayoutId = layoutId;
+        mLayoutId = layoutId
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewHolder {
-        var view = X2C.getView(mContext, mLayoutId)
-        return RecyclerViewHolder(view)
+        var view = X2C.inflate(mContext, mLayoutId, parent,false)
+        return RecyclerViewHolder(mContext, view)
     }
 
     override fun getItemCount(): Int {
@@ -38,4 +38,9 @@ abstract class ComRecyclerViewAdapter<T> constructor(context: Context, datas: Ar
     }
 
     protected abstract fun convert(holder: RecyclerViewHolder, item: T, position: Int)
+
+    fun setDatas(data: ArrayList<T>) {
+        mDatas = data
+        notifyDataSetChanged()
+    }
 }

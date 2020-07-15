@@ -6,8 +6,9 @@ import com.hxy.imagepicklib.imageloader.IMediaCallback
 import com.hxy.imagepicklib.model.MediaFile
 import com.hxy.imagepicklib.scanner.AbstractMediaScanner
 import com.hxy.imagepicklib.scanner.ImageScanner
-import com.hxy.imagepicklib.scanner.VideoScanner
-import com.hxy.imagepicklib.widget.UiHandler
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 /**
  * desc:
@@ -38,9 +39,9 @@ class PickerManager private constructor() {
             if (pickerConfig.isShowImage()) {
                 mScanners.add(ImageScanner())
             }
-            if (pickerConfig.isShowVideo()) {
-                mScanners.add(VideoScanner(pickerConfig.getMinTime()))
-            }
+//            if (pickerConfig.isShowVideo()) {
+//                mScanners.add(VideoScanner(pickerConfig.getMinTime()))
+//            }
         }
     }
 
@@ -48,18 +49,16 @@ class PickerManager private constructor() {
         var INSTANCE = PickerManager()
     }
 
-    fun loadMedia(context: Context, callback : IMediaCallback) {
-        Thread(Runnable {
+    fun loadMedia(context: Context, callback: IMediaCallback) {
+
+        GlobalScope.launch(Dispatchers.IO) {
             for (scanner in mScanners) {
                 val queryMedia = scanner.queryMedia(context) as ArrayList
                 mMediaFiles.addAll(queryMedia)
             }
-            UiHandler.post(Runnable {
-                callback?.let {
-                    it.onLoadSucceed(mMediaFiles)
-                }
-            })
-        }).start()
+            launch(Dispatchers.Main) {
+                callback.onLoadSucceed(mMediaFiles)
+            }
+        }
     }
-
 }

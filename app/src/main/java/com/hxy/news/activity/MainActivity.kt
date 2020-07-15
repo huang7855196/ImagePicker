@@ -1,9 +1,9 @@
-package com.hxy.imagepicker.activity
+package com.hxy.news.activity
 
 import android.content.Intent
-import com.hxy.imagepicker.R
 import com.hxy.core.baseactivity.base.BaseActivity
 import com.hxy.imagepicklib.ImagePickerActivity
+import com.hxy.news.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**

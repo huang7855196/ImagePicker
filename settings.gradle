@@ -1,4 +1,4 @@
-rootProject.name='ImagePacker'
+rootProject.name='news'
 include ':app'
 include ':imagepicklib'
 include ':core'
