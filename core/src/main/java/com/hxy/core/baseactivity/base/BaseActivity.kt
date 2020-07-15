@@ -1,11 +1,10 @@
-package com.hxy.imagepicker.base
+package com.hxy.core.baseactivity.base
 
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.hxy.imagepicker.R
-import com.hxy.imagepicker.face.TitleBar
-import com.hxy.imagepicker.utils.ActivityStateHelper
+import com.hxy.core.baseactivity.utils.ActivityStateHelper
+import com.hxy.core.baseactivity.widget.TitleBar
 import com.zhangyue.we.x2c.X2C
 
 /**
@@ -16,7 +15,7 @@ import com.zhangyue.we.x2c.X2C
 abstract class BaseActivity : AppCompatActivity() {
     private lateinit var mActivityStateHelper: ActivityStateHelper;
     private lateinit var mTitleBar: TitleBar
-    private val DefaultTitleLayoutId: Int = R.layout.layout_base_title_view
+    private val DefaultTitleLayoutId: Int = com.hxy.core.R.layout.layout_base_title_view
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

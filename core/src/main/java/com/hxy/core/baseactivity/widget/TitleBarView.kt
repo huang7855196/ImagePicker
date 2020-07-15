@@ -1,9 +1,8 @@
-package com.hxy.imagepicker.widget
+package com.hxy.core.baseactivity.widget
 
 import android.content.Context
 import android.util.AttributeSet
 import android.widget.FrameLayout
-import com.hxy.imagepicker.face.TitleBar
 import kotlinx.android.synthetic.main.layout_base_title_view.view.*
 
 

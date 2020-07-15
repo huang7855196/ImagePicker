@@ -1,18 +1,14 @@
-package com.hxy.imagepicker.activity
+package com.hxy.imagepicklib
 
 import android.Manifest
-import android.content.Context
 import android.content.pm.PackageManager
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.hxy.imagepicker.R
-import com.hxy.imagepicker.base.BaseActivity
-import com.hxy.imagepicklib.PickerManager
+import com.hxy.core.baseactivity.base.BaseActivity
 import com.hxy.imagepicklib.config.PickerConfig
 import com.hxy.imagepicklib.imageloader.IMediaCallback
 import com.hxy.imagepicklib.model.MediaFile
-import kotlinx.android.synthetic.main.activity_image_picker.*
 
 /**
  * desc:图片选择页面
@@ -34,7 +30,7 @@ class ImagePickerActivity : BaseActivity() {
     }
 
     private fun initRecycler() {
-        recyclerview.adapter
+        //recyclerview.adapter
     }
 
     private fun startScannerTask() {

@@ -1,10 +1,10 @@
-package com.hxy.imagepicker.utils
+package com.hxy.core.baseactivity.utils
 
 import android.view.View
 import android.view.ViewStub
-import com.hxy.imagepicker.R
-import com.hxy.imagepicker.base.BaseActivity
-import com.hxy.imagepicker.face.TitleBar
+import com.hxy.core.R
+import com.hxy.core.baseactivity.base.BaseActivity
+import com.hxy.core.baseactivity.widget.TitleBar
 import kotlinx.android.synthetic.main.activity_base_content.*
 
 /**

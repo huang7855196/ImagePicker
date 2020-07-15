@@ -2,7 +2,8 @@ package com.hxy.imagepicker.activity
 
 import android.content.Intent
 import com.hxy.imagepicker.R
-import com.hxy.imagepicker.base.BaseActivity
+import com.hxy.core.baseactivity.base.BaseActivity
+import com.hxy.imagepicklib.ImagePickerActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
