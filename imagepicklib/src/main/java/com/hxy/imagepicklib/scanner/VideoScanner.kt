@@ -1,6 +1,5 @@
 package com.hxy.imagepicklib.scanner
 
-import android.content.Context
 import android.database.Cursor
 import android.net.Uri
 import android.provider.MediaStore
@@ -13,21 +12,27 @@ import com.hxy.imagepicklib.model.MediaFile
  **/
 class VideoScanner constructor(minTimeMs: Long) : AbstractMediaScanner<MediaFile>() {
     private val SELECTION_VIDEO_DURATION = MediaStore.Video.Media.DURATION + "> ? "
-    private val mSkipMinTime: Boolean = if (minTimeMs > 0) true else false
-    private val mMinTimeMs: Long = minTimeMs
+
+    /**
+     * 最小时间
+     */
+    private var mMinTimeMs: Long = 0
+    private var mSkipMinTime = false
 
     override fun getScanUri(): Uri? {
         return MediaStore.Video.Media.EXTERNAL_CONTENT_URI
     }
 
     override fun getProjection(): Array<String?>? {
-        return arrayOf(MediaStore.Video.Media.DATA,
+        return arrayOf(
+                MediaStore.Video.Media.DATA,
                 MediaStore.Video.Media.MIME_TYPE,
                 MediaStore.Video.Media.BUCKET_ID,
                 MediaStore.Video.Media.BUCKET_DISPLAY_NAME,
                 MediaStore.Video.Media.DURATION,
                 MediaStore.Video.Media.DATE_TAKEN,
-                MediaStore.Video.Media.DATE_MODIFIED)
+                MediaStore.Video.Media.DATE_MODIFIED
+        )
     }
 
     override fun getSelection(): String? {
@@ -35,7 +40,7 @@ class VideoScanner constructor(minTimeMs: Long) : AbstractMediaScanner<MediaFile
     }
 
     override fun getSelectionArgs(): Array<String>? {
-        return if (mSkipMinTime) arrayOf(mMinTimeMs.toString()) else null
+        return if (mSkipMinTime) arrayOf<String>(mMinTimeMs.toString()) else null
     }
 
     override fun getOrder(): String? {

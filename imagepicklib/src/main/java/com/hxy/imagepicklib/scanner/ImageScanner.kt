@@ -18,27 +18,29 @@ class ImageScanner : AbstractMediaScanner<MediaFile>() {
     private val SELECTION_ID_WITHOUT_GIF = MediaStore.Images.Media.BUCKET_ID + "=? and (" + SELECTION_IMAGE_MIME_TYPE_WITHOUT_GIF + " )"
     private val SELECTION_ARGS_IMAGE_MIME_TYPE = arrayOf("image/jpeg", "image/png", "image/jpg", "image/gif")
     private val SELECTION_ARGS_IMAGE_MIME_TYPE_WITHOUT_GIF = arrayOf("image/jpeg", "image/png", "image/jpg")
-    private val mNeedGif = false
+    private var mNeedGif = false
+
+
     override fun getScanUri(): Uri? {
         return MediaStore.Images.Media.EXTERNAL_CONTENT_URI
     }
 
     override fun getProjection(): Array<String?>? {
-        return Array(6) {
-            MediaStore.Images.Media.DATA;
-            MediaStore.Images.Media.MIME_TYPE;
-            MediaStore.Images.Media.BUCKET_ID;
-            MediaStore.Images.Media.BUCKET_DISPLAY_NAME;
-            MediaStore.Images.Media.DATE_TAKEN;
-            MediaStore.Images.Media.DATE_MODIFIED
-        }
+        return arrayOf(
+                MediaStore.Images.Media.DATA,
+                MediaStore.Images.Media.MIME_TYPE,
+                MediaStore.Images.Media.BUCKET_ID,
+                MediaStore.Images.Media.BUCKET_DISPLAY_NAME,
+                MediaStore.Images.Media.DATE_TAKEN,
+                MediaStore.Images.Media.DATE_MODIFIED
+        )
     }
 
     override fun getSelection(): String? {
         return if (mNeedGif) SELECTION_IMAGE_MIME_TYPE else SELECTION_IMAGE_MIME_TYPE_WITHOUT_GIF
     }
 
-    override fun getSelectionArgs(): Array<String> {
+    override fun getSelectionArgs(): Array<String>? {
         return if (mNeedGif) SELECTION_ARGS_IMAGE_MIME_TYPE else SELECTION_ARGS_IMAGE_MIME_TYPE_WITHOUT_GIF
     }
 
