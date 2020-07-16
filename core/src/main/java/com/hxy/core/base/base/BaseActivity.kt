@@ -1,10 +1,10 @@
-package com.hxy.core.baseactivity.base
+package com.hxy.core.base.base
 
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.hxy.core.baseactivity.utils.ActivityStateHelper
-import com.hxy.core.baseactivity.widget.TitleBar
+import com.hxy.core.base.utils.ActivityStateHelper
+import com.hxy.core.base.widget.TitleBar
 import com.zhangyue.we.x2c.X2C
 
 /**

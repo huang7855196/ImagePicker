@@ -1,10 +1,10 @@
-package com.hxy.core.baseactivity.utils
+package com.hxy.core.base.utils
 
 import android.view.View
 import android.view.ViewStub
 import com.hxy.core.R
-import com.hxy.core.baseactivity.base.BaseActivity
-import com.hxy.core.baseactivity.widget.TitleBar
+import com.hxy.core.base.base.BaseActivity
+import com.hxy.core.base.widget.TitleBar
 import kotlinx.android.synthetic.main.activity_base_content.*
 
 /**

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.hxy.core.baseactivity.widget.TitleBarView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.hxy.core.base.widget.TitleBarView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/lcee_main"
     android:layout_width="match_parent"
@@ -30,4 +30,4 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</com.hxy.core.baseactivity.widget.TitleBarView>
+</com.hxy.core.base.widget.TitleBarView>

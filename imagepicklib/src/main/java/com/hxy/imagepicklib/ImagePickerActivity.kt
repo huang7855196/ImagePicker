@@ -2,14 +2,12 @@ package com.hxy.imagepicklib
 
 import android.Manifest
 import android.content.pm.PackageManager
-import android.graphics.BitmapFactory
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
-import com.hxy.core.baseactivity.base.BaseActivity
+import com.hxy.core.base.base.BaseActivity
 import com.hxy.imagepicklib.adapter.MediaAdapter
-import com.hxy.imagepicklib.adapter.MediaFileAdapter
 import com.hxy.imagepicklib.config.PickerConfig
 import com.hxy.imagepicklib.imageloader.IMediaCallback
 import com.hxy.imagepicklib.model.MediaFile

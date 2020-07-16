@@ -1,4 +1,4 @@
-package com.hxy.core.baseactivity.widget
+package com.hxy.core.base.widget
 
 import android.content.Context
 import android.util.AttributeSet
