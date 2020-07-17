@@ -1,14 +1,14 @@
-package com.hxy.news.fragment
+package com.hxy.news.news.fragment
 
 import com.hxy.core.base.base.BaseFragment
 import com.hxy.news.R
 
 /**
  * desc:
- * @author tuoxie on 2020/7/16
+ * @author tuoxie on 2020/7/17
  * E-Mail Address：tuoxie@gaoding.com
  **/
-class NewsFragment : BaseFragment(){
+class NewFragment : BaseFragment(){
     override fun initView() {
 
     }
@@ -18,6 +18,7 @@ class NewsFragment : BaseFragment(){
     }
 
     override fun getLayoutResource(): Int {
-        return R.layout.fragment_news
+        return R.layout.fragment_new
     }
+
 }

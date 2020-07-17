@@ -5,7 +5,7 @@ import com.hxy.core.base.base.BaseActivity
 import com.hxy.news.R
 import com.hxy.news.fragment.GirlFragment
 import com.hxy.news.fragment.MineFragment
-import com.hxy.news.fragment.NewsFragment
+import com.hxy.news.news.NewsFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -76,8 +76,8 @@ class MainActivity : BaseActivity() {
                 transaction.hide(mNewsFragment)
                 transaction.show(mMineFragment)
                 tv_home.setSelected(false)
-                tv_girl.setSelected(true)
-                tv_mine.setSelected(false)
+                tv_girl.setSelected(false)
+                tv_mine.setSelected(true)
             }
             else -> {
                 transaction.hide(mGirlFragment)

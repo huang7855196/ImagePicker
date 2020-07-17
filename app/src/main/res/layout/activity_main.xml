@@ -9,7 +9,7 @@
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/tv_home"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -17,7 +17,7 @@
 
     <TextView
         android:id="@+id/tv_home"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="50dp"
         android:gravity="center"
         android:drawablePadding="2dp"
@@ -30,7 +30,7 @@
 
     <TextView
         android:id="@+id/tv_girl"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="50dp"
         android:gravity="center"
         android:drawablePadding="2dp"
@@ -44,7 +44,7 @@
 
     <TextView
         android:id="@+id/tv_mine"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="50dp"
         android:gravity="center"
         android:text="我的"

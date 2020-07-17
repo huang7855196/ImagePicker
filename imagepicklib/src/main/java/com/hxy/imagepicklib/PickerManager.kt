@@ -21,7 +21,11 @@ class PickerManager private constructor() {
     var mPickerConfig: PickerConfig? = null
 
     companion object {
-        var mInstance = Holder.INSTANCE
+        val mInstance = Holder.INSTANCE
+    }
+
+    private object Holder {
+        val INSTANCE = PickerManager()
     }
 
     fun setPickerConfig(pickerConfig: PickerConfig?) {
@@ -43,10 +47,6 @@ class PickerManager private constructor() {
 //                mScanners.add(VideoScanner(pickerConfig.getMinTime()))
 //            }
         }
-    }
-
-    private object Holder {
-        var INSTANCE = PickerManager()
     }
 
     fun loadMedia(context: Context, callback: IMediaCallback) {

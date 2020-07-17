@@ -21,6 +21,7 @@ abstract class BaseFragment : Fragment() {
             mRootView = X2C.inflate(context, getLayoutResource(), container, false)
         }
         initView()
+        initData()
         return mRootView
     }
 
