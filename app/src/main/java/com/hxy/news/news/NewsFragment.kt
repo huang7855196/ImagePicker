@@ -2,6 +2,7 @@ package com.hxy.news.news
 
 import android.content.Context
 import android.graphics.Color
+import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -43,7 +44,7 @@ class NewsFragment : BaseFragment() {
     fun initTab(it: ArrayList<NewsChannelEntity>) {
         var mNavigator = CommonNavigator(context)
         mNavigator.scrollPivotX = 0.35f
-        mNavigator.adapter = object  : CommonNavigatorAdapter() {
+        mNavigator.adapter = object : CommonNavigatorAdapter() {
             private var news: ArrayList<NewsChannelEntity> = it
             private var viewPager: ViewPager = vp_viewpager
             override fun getTitleView(context: Context?, index: Int): IPagerTitleView {
@@ -74,7 +75,11 @@ class NewsFragment : BaseFragment() {
     fun initViewPage(news: ArrayList<NewsChannelEntity>) {
         var fragments = ArrayList<Fragment>();
         for (i in 0 until news.size) {
-            fragments.add(NewFragment())
+            var fragment = NewFragment()
+            var bundle = Bundle()
+            bundle.putString("id", news.get(i).id);
+            fragment.arguments = bundle
+            fragments.add(fragment)
         }
         vp_viewpager.adapter = FragmentAdapter(fragmentManager!!, fragments)
         ViewPagerHelper.bind(mid_tab, vp_viewpager)

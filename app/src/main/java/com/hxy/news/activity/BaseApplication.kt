@@ -3,6 +3,7 @@ package com.hxy.news.activity
 import android.app.Application
 import android.content.Context
 import android.content.res.Resources
+import androidx.multidex.MultiDex
 
 /**
  * desc:
@@ -22,5 +23,14 @@ class BaseApplication : Application() {
 
         val appResources: Resources
             get() = baseApplication!!.resources
+    }
+
+    /**
+     * 分包
+     * @param base
+     */
+    override fun attachBaseContext(base: Context?) {
+        super.attachBaseContext(base)
+        MultiDex.install(this)
     }
 }
